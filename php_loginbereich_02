@@ -19,7 +19,7 @@
 
 	/* Kontrolle, ob innerhalb der Session */
 	if(!isset($_SESSION["n"]))
-		exit("<p>Sie haben keinen Account oder ein falsches Passwort eingegeben!<br> <a href=sc_schutz_a.php>" . "Zurück zum Login</a></p>");
+		exit("<p>Sie haben keinen Account oder ein falsches Passwort eingegeben!<br> <a href=login_01.php>" . "Zurück zum Login</a></p>");
 ?>
 
 <!DOCTYPE html>
