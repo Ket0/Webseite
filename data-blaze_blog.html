@@ -4,31 +4,110 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <meta name="author" content="Stefan Eickholz">
-    
-	<title>Blog mit Bootstrap</title>
+       
+	<meta http-equiv="content-type" content="text/html">
+	<meta name="robots" content="index, follow" />
+    <meta name="author" content="Stefan Eickholz" />
+    <meta name="creator" content="seicko.de" />
+    <meta name="Content-Language" content="de" />
+	<link rel="icon" sizes="16x16" href="/icon/eagle3.ico">
+    <title>SE_v2</title>
 	<link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
-	<link href="/css/cover.css" rel="stylesheet">
+	<link href="/css/main_002.css" rel="stylesheet">
   </head>
 
-  <body class="text-center">
+	<!-- Body -->  
+	<body class="text-center">
 
     <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
       <header class="masthead mb-auto">
         <div class="inner">
 			
-          <h3 class="masthead-brand">Logo hier einfügen</h3>
+         <!--h3 class="masthead-brand">Logo hier einfügen</h3-->
 			
           <nav class="nav nav-masthead justify-content-center">
-            <a class="nav-link active" href="index.html">Startseite</a>
-            <a class="nav-link" href="blog.html">Blog</a>
+            <a class="nav-link" href="index.html">Startseite</a>
+            <a class="nav-link active" href="blog.html">Blog</a>
+			  
+			<a class="nav-link" href="ktest.html">Karussell-Test</a> 
+			  
             <a class="nav-link" href="kontakt.html">Kontakt</a>
           </nav>
         </div>
       </header>
 
+	  <!-- Main -->  
       <main role="main" class="inner cover">
-		Dies ist der Blog.
+		 		
+		<!-- Karussell -->  
+		<div id="myCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+          <li data-target="#myCarousel" data-slide-to="1"></li>
+          <li data-target="#myCarousel" data-slide-to="2"></li>
+        </ol>
+        
+			
+		<div class="carousel-inner">
+          <div class="carousel-item active">
+            
+			  <!-- Hintergrundbild -->
+			  <!--img class="first-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="First slide"-->
+			  <img src="/images/background/1.jpg" align="middle" style="height:80%;">
+            
+			  <div class="container">
+              <div class="carousel-caption">
+                <h1>Non</h1>
+                <p>Deo volente</p>
+                <p><a class="btn btn-lg btn-primary" href="#" role="button">1</a></p>
+              </div>
+            </div>
+          </div>
+			
+          <div class="carousel-item">
+            <!--img class="second-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Second slide"-->
+			  
+			<!-- Hintergrundbild -->
+			<img src="/images/background/2.jpg" align="middle" style="height:80%;">
+			  
+            <div class="container">
+              <div class="carousel-caption">
+                <h1>Soli</h1>
+				  
+                <p> nobis </p>
+                <p><a class="btn btn-lg btn-primary" href="#" role="button">2</a></p>
+              
+				</div>
+            </div>
+          </div>
+			
+          <div class="carousel-item">
+			  
+            <!--img class="third-slide" src="data:image/gif;base64,R0lGODlhAQABAIAAAHd3dwAAACH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==" alt="Third slide"-->
+			  
+			<!-- Hintergrundbild -->
+			<img src="/images/background/3.jpg" align="middle" style="height:80%;">
+			  
+            <div class="container">
+              <div class="carousel-caption">
+                <h1>Cedit</h1>
+                <p>viventibus.</p>
+                <p><a class="btn btn-lg btn-primary" href="#" role="button">3</a></p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <a class="carousel-control-prev" href="#myCarousel" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#myCarousel" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span>
+        </a>
+      </div>  
+		  
+		  
       </main>
 
       <footer class="mastfoot mt-auto">
@@ -36,13 +115,14 @@
       </footer>
     </div>
 
-
-    <!-- Bootstrap core JavaScript
-    ================================================== -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
-    <script src="../../assets/js/vendor/popper.min.js"></script>
-    <script src="../../dist/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-			q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 							crossorigin="anonymous"></script>
+	  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	  
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+	  
+    <!--script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script-->
+    <!--script src="js/bootstrap/bootstrap.min.js"></script-->
+	<!--script> alert(jQuery.fn.jquery); </script-->
   </body>
 </html>
