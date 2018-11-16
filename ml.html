@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	
+	<meta http-equiv="content-type" content="text/html">
+	<meta name="robots" content="index, follow" />
+    <meta name="author" content="Stefan Eickholz" />
+    <meta name="creator" content="seicko.de" />
+    <meta name="Content-Language" content="de" />
+	<link rel="icon" sizes="16x16" href="/icon/eagle3.ico">
+    <title>SE_v2</title>
+	
+    <link href="css/bootstrap/bootstrap.min.css" rel="stylesheet">
+	<link href="/css/ml.css" rel="stylesheet">
+  </head>
+	
+<body class="text-center">
+    <div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+      <header class="masthead mb-auto">
+        <div class="inner">
+			
+          <!--h3 class="masthead-brand">Logo hier einfügen</h3-->
+          <nav class="nav nav-masthead justify-content-center">
+            <a class="nav-link" href="index.html">Startseite</a>
+            <a class="nav-link" href="blog.html">Blog</a>
+			
+			<a class="nav-link" href="https://github.com/Ket0">Github/Ket0</a>  
+			<!--a class="nav-link" href="ktest.html">Karussell-Test</a--> 
+            <a class="nav-link" href="kontakt.html">Kontakt</a>
+			  
+			  &nbsp;&nbsp;&nbsp;<li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Themen
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+		  <a class="dropdown-item" href="startup.html">Startups</a>
+		  <a class="dropdown-item" href="map.html">Startup-Map Berlin-Brandenburg (beta)</a>
+          <a class="dropdown-item" href="ml.html">Machine Learning</a>
+          <a class="dropdown-item" href="gpu.html">Nvidia</a>
+		  <a class="dropdown-item" href="tensorflow-test.html">Testing Tensorflow.js</a>
+		  
+		  <!--a class="dropdown-item" href="#">Blockchain</a>
+          <a class="dropdown-item" href="#">Python</a>
+		  <a class="dropdown-item" href="#">C++</a>
+		  <a class="dropdown-item" href="#">Potsdam</a-->
+			
+          <a class="dropdown-item" href="/php/sc_schutz_a.php">Login (beta)</a>
+        </div>
+      </li>
+          </nav>
+        </div>
+      </header>
+		
+      <main role="main" class="inner cover">
+		  <br><br>
+		  
+	<div style="text-align: left">
+        <h1 class="cover-heading">Willkommen auf der Machine Learning Seite</h1>
+
+		  -Was ist Machine Learning?
+		  -Welche Forschungspakete gibt es?
+		  -Machine Learning in der Anwendung
+		  
+		  <h1>Einführung in maschinelles Lernen</h1>
+		  Seit 2012 ist eine Form der digitalen Mustererkennung besonders in den Fokus der interessierten Öffentlichkeit geraten. Neuronale Netzwerke bestehen aus Knoten und Verbindungen zwischen diesen Knoten. Die Knoten werden dabei als Neuronen bezeichnet und ihre Verbindungen als Gewichtungen. Um dem Netzwerk Struktur zu geben, werden die Neuronen in Ebenen geschichtet. Typischerweise wird diese Art von Netzwerken aus einer   Eingabeschicht, folgend eine oder mehrere verdeckte Schichten, und einer Ausgabe Schicht geformt. Die verdeckten Schichten werden als verdeckt bezeichnet, weil sie nur über die Verbindung zur Eingabe- und Ausgabeschicht sichtbar sind. Aus der Vielzahl von verdeckten Schichten leitet sich der englische Begriff des Deep Learnings ab. Eben weil das Netzwerk durch die Anzahl der verdeckten Schichten an Komplexität zunimmt.<br><br>
+		  Ein kurzes Beispiel soll anhand dieser Programmanweisungen erläutert werden. <a href="https://github.com/Ket0/Machine-Learning-Collection/blob/master/ez_compute_mnist.py">MNIST Zahlenerkennung</a> 
+			  
+			<br><br>
+			  Im Beispiel wird das beliebte Machine Learning Framework 'Google Tensorflow' benutzt. Nachdem das Modul importiert worden ist, wird ein Trainings- und Testdatensatz, die Zahlensammlung MNIST, geladen. Dieser Datensatz besteht aus 60.000 Trainingsbildern, die handgeschriebene Zahlen darstellen, und 10.000 Testbildern, die zur Verifikation der Klassifizierungsentscheidung durch das Neuronennetzwerk verwendet werden. Die Größe der Bilder beträgt (nur) 28x28 Pixel. Wenn ein Trainingsbild aus mehr Pixeln besteht, steigt die Anzahl der benötigten Rechenoperationen und der HPC Client (Workstation, Cloud) muss unter sonst gleichen Bedingungen deutlich länger rechnen. Lange und hohe Auslastung von CPUs und GPUs bedeutet auch freilich, dass ein hoher Stromverbrauch zu erwarten ist. Das muss sollte daher bei der Wahl der Trainingsdaten bedacht werden. <br><br>
+			  In einem nächsten Schritt wird die Abstraktionsschicht 'Keras' (=Keras API von François Chollet) verwendet, welche die Benutzung von Tensorflow vereinfacht. Trainungs- und Testdaten werden normalisiert, was bedeutet, dass aus den Vektoren von Zahlen zwischen 0-255, die je eine Zahl (=ein Trainingsbild) darstellen, Fließkommawerte zwischen 0 und 1 erstellt werden. Es folgt die nähere Definition des Modells, das als 'Sequential' festgelegt wird. Zwei verdeckte Ebene enthalten 128 Knoten, denen eine Aktivierungsfunktion zugeordnet wird (relu, <a href="https://en.wikipedia.org/wiki/Rectifier_(neural_networks)">Rectified Linear Unit</a>). Die Aktivierungsfunktion kann als ein Wahrscheinlichkeitsmaß verstanden werden, welches beschreibt, ob ein Neuron im Netzwerk aktiv ist und falls ja, wie stark. Ein Neuron soll genau dann besonders aktiv sein, wenn es eine Eigenschaft, die zur Klassifizierung der Eingabedaten von Bedeutung ist, detektiert hat. <br><br> 
+			  
+			  Als Ausgabeschicht wird eine Schicht bestehend aus 10 Neuronen mit der Aktivierungsfunktion Softmax gewählt. Softmax liefert eine Wahrscheinlichkeit für die Erkennung einer bestimmten Klasse aus einer Menge an Klassen, entscheidet also letztlich, welche Klassifizierung des neuronale Netzwerk geben wird. Jedes Neuron steht für eine der 10 Zahlen, die der MNIST Datensatz enthält.<br><br> 
+			  
+			  Nun kann die Verarbeitung der MNIST Bilder gestartet werden. Dazu wird das Modell mit einem zu wählenden Optimierer (optimizer), einem Verlustmaß ('loss') und einer Metrik ('metric') kompiliert. Der Signatur der Methode fit werden die Trainungsdaten und eine Epochenzahl (Anzahl Trainingsdurchläufe) übergeben. Als Ergebnis wird ein Genauigkeitmaß geliefert, das beschreibt in wieviel Fällen das Modell eine richtige Klassifizierung vorgenommen hat, zB im Fall des vorliegenden Modells in 97,58% der Fälle. In 2,42% der Testklassifizierungen liegt das Modell jedoch falsch. Die Idealvorstellung ist natürlich ein Klassifizierungsfehler von Null.
+
+		  </div>
+		
+		  
+		  <h1>Welche Hardware brauche ich für Machine Learning?</h1>
+		  <p>Als Beginner braucht man gar keine spezielle Hardware. Die verwendeten Frameworks arbeiten sowohl mit Prozessoren (CPU), als auch mit Grafikkarten (GPU). GPUs sind jedoch deutlich schneller im Berechnen eines neuronalen Netzwerks. Das gezeigte Beispiel (s.o.) belegt ca. 500 MB Arbeitsspeicher. Daher sollte man auch als Einsteiger mindestens 4-8 GB Arbeitsspeicher zur Verfügung haben.
+			  
+			  <br><br>Sollen nach dem Erlernen der Grundlagen größere Netzwerke erstellt oder größere Datensätze verarbeitet werden, kann eine Nvidia GTX 1060 (6 GB) eine gute Wahl sein. Der Preis beträgt ca. 200-300 Euro, je nach Hersteller. Alles preislich darüber kann als der ambitionierte Bereich betrachtet werden. Wer sich hier betätigen möchte, kann eine Nvidia GTX 1080 (~ 520 €), GTX 1080ti (~760 €)  erwerben, die hohe Rechenleistung und viel Speicher (8-11 GB) bieten. Ab September kann auch die neuste Generation an Nvidia GPU verwendet werden (Nvidia RTX Turing Architektur, RTX 2080, RTX 2080ti (~ 1.300 €).</p>
+		  
+		  <h1>Das Basiswissen zum maschinellen Lernen</h1>
+<div style="text-align: left">		  
+		  <ul>Netzwerkstruktur
+			  <li>Layer</li>
+			  <li>Knoten/Neuron</li>
+			  <li>Gewichtung</li>
+				 <li>...</li>
+		  </ul> 
+		  <ul>Modellstruktur	  
+			  <li>Loss Function</li>
+			  <li>Backpropagation</li>
+				<li>Optimizer</li>
+				<li>...</li>
+		  </ul>
+		  <ul>Aktivierungsfunktion
+		  		<li>Sigmoid</li>
+		  		<li>Softmax</li>
+			    <li>Rectifier</li>
+				<li>...</li>
+		  </ul>
+</div>		  
+		  
+<h1>Systematisierung von Neuronalen Netzwerken (10.11.2018)</h1>
+<div style="text-align: left">			  
+	<br><br><center><a href="https://en.wikipedia.org/wiki/Convolutional_neural_network">Convolutional Networks</a> &nbsp;&nbsp;&nbsp; <a href="https://en.wikipedia.org/wiki/Recurrent_neural_network">Recurrent Networks</a> &nbsp;&nbsp;&nbsp; <a href="https://en.wikipedia.org/wiki/Generative_adversarial_network">Generative Adversarial Networks</a> &nbsp;&nbsp;&nbsp; <a href="https://en.wikipedia.org/wiki/Reinforcement_learning">Reinforcement Learning</a> &nbsp;&nbsp;&nbsp; 'New Concepts'</center> 
+	
+			  <br><br>Subtypen innerhalb der Kateogrien:
+		  <br><br>
+		  
+		        <ul>Convolutional Networks
+		  		 <li>Encoder/Decoder</li>
+		  		 <li>ReLu</li>
+			     <li>BatchNorm</li>
+				 <li>Concat</li>
+				 <li>Pooling</li>
+				 <li>Dropout</li>
+		        </ul>
+			  
+		  <br><br>
+		  	    <ul>Recurrent Networks
+		  		 <li>LSTM</li>
+		  		 <li>GRU</li>
+			     <li>Beam Search</li>
+				 <li>Wavenet</li>
+				 <li>CTC</li>
+				 <li>Attention</li>
+		        </ul>
+		  
+		  <br><br>
+		  	    <ul>Generative Adversarial Networks
+		  		 <li>3D-GAN</li>
+		  		 <li>MedGAN</li>
+			     <li>Conditional GAN</li>
+				 <li>Coupled GAN</li>
+				 <li>Speech Enhancement GAN</li>
+		        </ul>
+		  
+		 <br><br>
+		  	    <ul>Reinforcement Learning
+		  		 <li>DQN</li>
+		  		 <li>Simulation</li>
+			     <li>DDPG</li>
+		        </ul>
+		  
+		 <br><br>
+		  	    <ul>'New Concepts'
+		  		 <li>Capsule Networks</li>
+		  		 <li>Mixture of Experts</li>
+			     <li>Neural Collaborative Filtering</li>
+				 <li>Block Sparse LSTM</li>
+		        </ul>
+		  </div>
+
+		  <a href="tensorflow-test.html">Testing Tensorflow.js</a>
+		  
+		  
+      </main>
+      <footer class="mastfoot mt-auto">
+        <div class="inner">
+<p>
+	<script type="text/javascript">
+  lastmod = document.lastModified     
+  lastmoddate = Date.parse(lastmod)  
+  if(lastmoddate == 0){document.writeln("Last Modified: Unknown")} 
+		else {document.writeln("Letzte Änderung: " + lastmod)}
+	</script> </p>
+			
+			
+          <p>Powered by <a href="https://getbootstrap.com/">Bootstrap</a></p>
+        </div>
+      </footer>
+		
+	</div>
+	
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-			q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 							crossorigin="anonymous"></script>
+	  
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+	  
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js" integrity="sha384-smHYKdLADwkXOn1EmN1qk/HfnUcbVRZyYmZ4qpPea6sjB/pTJ0euyQp0Mk8ck+5T" crossorigin="anonymous"></script>
+	  
+    <!--script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script-->
+    <!--script src="js/bootstrap/bootstrap.min.js"></script-->
+	<!--script> alert(jQuery.fn.jquery); </script-->
+  </body>
+</html>
