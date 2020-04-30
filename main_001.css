@@ -1,12 +1,28 @@
+/* Stand 01.05.2020 */
+
+
 /*
  * Globals
- */
+ 
+ Reihenfolge der meistverkaufen Smartphones (24.03.2020) 
+ 1 Samsung S10		3040x1440
+ 2 Samsung S20		3200x1440
+ 3 Samsung S10e		2280x1080
+ 4 Huawei  P30 Pro	2340x1080
+ 5 Samsung A51  	2400x1080	#
+ 6 Google Pixel 3a 	2220x1080
+ 7 Samsung Galaxy A40	2340x1080
+ 8 Apple iPhone XS	2436x1125
+ 9 Apple iPhone 11	1792x828
+10 Huawei P30		2340x1080
+
+ HTC Desire 526G 	960x540	
+*/
+
 
 /* Colors
-
-Android green #A4C639
-MS green #7CBB00
-
+Android green   #A4C639
+MS green        #7CBB00
 
 /* Links */
 a,
@@ -25,9 +41,6 @@ a:hover {
   border: .05rem solid #4dffdb;  /* #fff */
 }
 
-
-
-
 /*
  * Base structure
  */
@@ -42,15 +55,24 @@ body {
 body {
   display: -ms-flexbox;
   display: flex;
-  color: #ff0066; /* Scriftfarbe #333 #ffef96 */
+  color: #4dffdb; /* Scriftfarbe #333 #ffef96 */
   text-shadow: 0 .05rem .1rem rgba(0, 0, 0, .5);
   box-shadow: inset 0 0 5rem rgba(0, 0, 0, .5);
 }
 
+/* red #ff0066; 
+   green #4dffdb; 
+   pink #ff0066; 
+   yellow;
+   grey;
+   silver;
+*/
+
+h1 {color: yellow; font-size: 25px;}
+
 .cover-container {
   max-width: 42em;
 }
-
 
 /*
  * Header
@@ -85,6 +107,25 @@ body {
   border-bottom-color: #fff;
 }
 
+/* Make blink Animation */
+@keyframes blink_effect {
+    0% {
+        visibility: hidden;
+    }
+    50% {
+        visibility: hidden;
+    }
+    100% {
+        visibility: visible;
+    }
+}
+
+/* Add blink Animation to class */
+.blink {
+    animation: .5s blink_effect infinite
+}
+
+
 /*
 @media (min-width: 48em) {
   .masthead-brand {
@@ -103,11 +144,16 @@ body {
 .cover {
   padding: 0 1.5rem;
 }
+
 .cover .btn-lg {
   padding: .75rem 1.25rem;
   font-weight: 700;
 }
 
+.cover-heading {
+  font-size: 25px;
+  
+}
 
 /*
  * Footer
@@ -116,6 +162,15 @@ body {
   color: rgba(255, 255, 255, .5);
 }
 
+/*
 .unix {
 	color: #4dffdb;
 }
+*/
+
+/* Burger Operator */
+.glyphicon-menu-hamburger {
+  font-size: npx;
+}
+
+color: #4dffdb;
