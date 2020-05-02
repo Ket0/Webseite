@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<!-- Willkommen im HTML Markup lieber Webentwickler! Hier geht es zur Sache. -->
+<html lang="de">
+
+<!-- KOPF -->
+<head>
+<title>Stefan Eickholz | Webspace | FAQ</title>	
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta http-equiv="content-type" content="text/html">
+<meta name="robots" content="index, follow" />
+<meta name="author" content="Stefan Eickholz" />
+<meta name="creator" content="seicko.de" />
+<meta name="Content-Language" content="de" />
+<meta name="description" content="Technical FAQ">
+<meta name="keywords" content="Frequently asked questions">
+	
+<link rel="icon" sizes="16x16" href="/icon/#">
+	
+<link href="/css/bootstrap/bootstrap.min.css" rel="stylesheet">
+<link href="/css/main_001.css" rel="stylesheet">
+</head>
+
+<body>
+<a class="nav-link" href="/index.html">Zurück zur Startseite</a>
+Hallo! Hier sind einige technische Fragen beantwortet:
+	
+	<h3>F: Wie wird ein öffentlicher SSH Schlüssel aus ssh-add zu Git kopiert?</h3>
+	<p>A: Der SSH Schlüssel muss über <br><br>
+		
+		<code> $ ssh-keygen -t rsa -b 4096 -C "your_email@example.com" </code>
+	   erzeugt werden. Ein Passwort String wird gewählt und gespeichert.
+		
+		<br><br>mit 
+		<code>$ ssh-add ~/.ssh/id_rsa</code>
+		wird der generierte SSH Schlüssel im SSH Konfigurationsprogramm ('ssh-agent') gespeichert.
+		
+		Anschließend muss der Schlüssel aus der Datei des SSH Konfigurationsprogramms in das richtige Clipboard ('Zwischenspeicher') kopiert werden. Weil es mehrere Clipboards gibt, muss ausdrücklich das korrekte Clipboard benutzt werden bzw. der SSH Schlüssel muss in dieses kopiert werden. Dazu wird folgede Vorgehensweise verwendet: Das Programm 'xclip' muss in der Shell installiert werden, wenn es nicht schon vorhanden ist. <br><br>
+		
+		<code>sudo apt install xclip</code>
+		
+		dann
+		
+		<code>cat ~/.ssh/id_rsa.pub | xclip -selection -c</code>
+	</p>
+</body>
+</html>
+
+
+
